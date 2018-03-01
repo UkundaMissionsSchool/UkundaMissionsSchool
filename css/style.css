@@ -1,0 +1,674 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: white;
+}
+
+/*NAVIGATION*/
+
+.menu-toggle {
+  width: 40px;
+  height: 30px;
+  position: fixed;
+  top: 40px;
+  left: 50px;
+  cursor: pointer;
+  z-index: 3;
+  transition-duration: 0.5s;
+}
+.menu-toggle.on .one {
+  -moz-transform: rotate(45deg) translate(7px, 7px);
+  -ms-transform: rotate(45deg) translate(7px, 7px);
+  -webkit-transform: rotate(45deg) translate(7px, 7px);
+  transform: rotate(45deg) translate(7px, 7px);
+}
+.menu-toggle.on .two {
+  opacity: 0;
+}
+.menu-toggle.on .three {
+  -moz-transform: rotate(-45deg) translate(8px, -10px);
+  -ms-transform: rotate(-45deg) translate(8px, -10px);
+  -webkit-transform: rotate(-45deg) translate(8px, -10px);
+  transform: rotate(-45deg) translate(8px, -10px);
+}
+.one, .two, .three {
+  width: 100%;
+  height: 2px;
+  background: #01f9c7;
+  margin: 9px auto;
+  backface-visibility: hidden;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: calc(50vh - 144px);
+  text-align: center;
+}
+nav ul.hidden {
+  display: none;
+}
+nav ul a {
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  text-decoration: none;
+  color: #01f9c7;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  line-height: 3;
+  width: 100%;
+  display: block;
+  font-weight: 200;
+}
+nav ul a:hover {
+  color: #2b2b2b;
+}
+.menu-section.on {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  transition-duration: 0.5s;
+}
+/*HEADER*/
+
+video {
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto;
+ z-index: -100;
+ transform: translateX(-50%) translateY(-50%);
+ background-size: cover;
+}
+.title{
+  position: absolute;
+  width: 580px;
+  top: 0;
+  left: calc(50vw - 260px);
+  height: 100%;
+  z-index: 3;
+  animation:opacity 2.5s ease forwards;
+  -ms-animation:opacity 2.5s ease forwards;
+  -webkit-animation:opacity 2.5s ease forwards;
+  -0-animation:opacity 2.5s ease forwards;
+  -moz-animation:opacity 2.5s ease forwards;
+}
+.date{
+  position: absolute;
+  width: 250px;
+  top: 80px;
+  right: 80px;
+  z-index: 3;
+  animation:opacity 2.5s ease forwards;
+  -ms-animation:opacity 2.5s ease forwards;
+  -webkit-animation:opacity 2.5s ease forwards;
+  -0-animation:opacity 2.5s ease forwards;
+  -moz-animation:opacity 2.5s ease forwards;
+}
+.btn{
+  display: inline-block;
+  padding: 20px 60px;
+  border-radius: 50px;
+  border: 2px solid white;
+  text-transform: uppercase;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 20px 0;
+  z-index: 5;
+  letter-spacing: 2px;
+  animation:opacity 2.5s ease forwards;
+  transition: 0.5s all;
+}
+.btn:hover{
+  background: rgba(0, 0, 0, 0.2);
+}
+.header{
+  width: 100vw;
+  height:100vh;
+  overflow:hidden;
+  position: relative;
+}
+
+.header-title{
+  z-index: 3;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+.header-title h1{
+  text-align: center;
+  font-size: 4em;
+  margin-top: 40vh;
+}
+.header-title h2{
+  text-align: center;
+  font-size: 2em;
+  margin: 30px 0;
+}
+@-webkit-keyframes move {
+  0% {
+  	transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -o-transform: scale(1.0);
+    -moz-transform: scale(1.0);
+  }
+  100% {
+  	transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.mouse {
+  width: 22px;
+  position: absolute;
+  height: 42px;
+  border-radius: 15px;
+  border: 2px solid #01f9c7;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -12px;
+}
+.scroll {
+  display: block;
+  margin: 6px auto;
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background: #01f9c7;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+/*PROJECT*/
+
+#project{
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+  background-color: #efefef;
+  padding: 50px 0 90px;
+}
+#project h1{
+  font-size: 6em;
+  text-align: center;
+  color: #292929;
+  line-height: 1.3em;
+}
+
+#project p{
+  width: 50%;
+  font-size: 1.4em;
+  line-height: 1.5em;
+  margin: 20px auto 10px;
+  color: #292929;
+  text-align: center;
+}
+span{
+  font-weight: bold;
+  color: #01f9c7;
+}
+strong{
+  font-weight: bold;
+}
+.btn-red{
+  display: block;
+  width: fit-content;
+  padding: 20px 60px;
+  border-radius: 3px;
+  border: 2px solid #01f9c7;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.5s all;
+  margin: 20px auto;
+  background: #01f9c7;
+  color: white;
+}
+a{
+  text-decoration: none;
+}
+.btn-red:hover{
+  border: 2px solid #01f9c7;
+  color: #01f9c7;
+  background: rgba(1, 248, 198, 0.15);
+}
+
+/*CONCERT*/
+
+#concert{
+  padding: 140px 0 170px;
+  background: rgba(31,31,31,0.8);
+  height: auto;
+  overflow: auto;
+  position: relative;
+}
+#concert h1{
+  font-size: 5em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+}
+#concert p{
+  font-size: 1.3em;
+  line-height: 1.5em;
+  color: #ffffff;
+  margin-top: 20px;
+}
+.concert-text .btn-red{
+  margin: 40px 0 0 0;
+}
+.concert-wrap{
+  width: 80%;
+  margin: auto;
+}
+.concert-img{
+  width: 50%;
+  display: inline-block;
+  position: relative;
+  top: 60px;
+  margin-left: 50px;
+  z-index: 1;
+}
+.concert-img img{
+  box-shadow: -4px 7px 41px -8px rgba(0,0,0,0.75);
+  width: 100%;
+}
+.concert-img::after{
+  position: absolute;
+  border: 15px solid white;
+  content: "";
+  height: 90%;
+  width: 90%;
+  top: -40px;
+  right: -40px;
+  z-index: -1;
+}
+.concert-text{
+  width: 39%;
+  float: right;
+}
+img{
+  max-width: 100%;
+}
+
+/*STEUN*/
+#steun{
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+  background-color: #efefef;
+  padding: 90px 0 110px;
+}
+#steun h1{
+  font-size: 6em;
+  color: #292929;
+  text-align: center;
+  line-height: 1.3em;
+}
+
+#steun p{
+  font-size: 1.3em;
+  line-height: 1.5em;
+  margin: 20px 0 0 0px;
+  color: #292929;
+  vertical-align: top;
+  text-align: center;
+}
+.steun-wrap{
+  width: 60%;
+  margin: auto;
+}
+
+
+/*FOOTER*/
+
+.contact{
+  background-color: rgba(31,31,31,0.8);
+  width: 100vw;
+  padding: 70px 0 100px;
+}
+.contact-wrap{
+  width: 80vw;
+  margin: auto;
+  color: #e6e6e6;
+}
+.contact img{
+  height: 80px;
+  display: block;
+  margin: auto;
+}
+.contact p{
+  text-align: center;
+  margin: 25px 0 0;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  letter-spacing: 2px;
+}
+
+/*OVERLAYS*/
+
+.overlays{
+  position: fixed;
+  width: 0;
+  height:0;
+  top: 50%;
+  left: 50%;
+  transition: opacity 0.5s ease;
+  visibility: hidden;
+  z-index: -1000;
+  opacity: 0;
+  background: #efefef;
+}
+.open{
+  visibility: visible;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  overflow-y: hidden;
+  opacity: 1;
+}
+.content-overlay{
+}
+.overlay-closer{
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+}
+.overlay-closer p{
+  color: white;
+  display: inline-block;
+  border: 2px solid;
+  padding: 15px 19px;
+}
+.content-overlay p{
+    font-size: 1.4em;
+    line-height: 1.5em;
+    margin: 30px 0;
+    color: #2c2c2c;
+    text-align: center;
+}
+.content-overlay h1{
+  font-size: 6em;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  color: #292929;
+}
+.content-overlay img{
+  max-width: 100%;
+}
+.overlays img{
+  width: 100%;
+}
+.content-overlay a{
+  font-weight: 600;
+  text-decoration: none;
+  color: #2b2b2b;
+}
+.video{
+  width: 100%;
+}
+.social-icons{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+.social-icons img{
+  width: 70px;
+}
+.acties{
+  margin: 80px auto 50px;
+}
+.acties-wrap{
+  width: 55vw;
+  margin: auto;
+}
+.harten{
+  background: #2c2c2c;
+}
+.harten-wrap{
+  width: 55vw;
+  margin: auto;
+  padding: 0 0 90px;
+}
+.harten-wrap p, .harten-wrap h1{
+  color: white;
+}
+.locatiemap{
+  position: relative;
+  top: 10px;
+}
+.optredens{
+  margin: 70px auto 80px;
+}
+.optredens-wrap{
+  width: 55vw;
+  margin: auto;
+}
+.optredens img{
+  box-shadow: 4px 7px 40px 2px rgba(0,0,0,0.27);
+}
+
+
+/*MEDIAQUERIES*/
+
+@media screen and (max-width: 1560px){
+  body{
+    font-size: 0.9em;
+  }
+  #steun p {
+    font-size: 1.3em;
+    line-height: 1.4em;
+  }
+  #project p {
+    font-size: 1.3em;
+    line-height: 1.5em;
+  }
+  .contact p {
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 1450px){
+  .steun-left {
+    width: 17%;
+  }
+}
+@media screen and (max-width: 1380px){
+  .concert-text {
+    width: 49%;
+  }
+  .concert-img {
+    width: 40%;
+    margin-left: 0px;
+  }
+  #concert {
+    padding: 100px 0 130px;
+  }
+}
+@media screen and (max-width: 1250px){
+  .concert-img {
+      width: 80%;
+      display: block;
+      margin: auto;
+  }
+  .concert-text {
+    width: 80%;
+    float: none;
+    margin: 100px auto 0;
+  }
+  #concert {
+    padding: 100px 0 110px;
+  }
+  .steun-left {
+    display: none;
+  }
+  .steun-wrap {
+    width: 80%;
+  }
+  .concert-text .btn-red{
+    margin: 40px auto 0;
+  }
+  .steun-right {
+    padding-left: 0px;
+    width: 80%;
+    margin: auto;
+    display: block;
+    float: none;
+  }
+  #project h1 {
+    width: 60%;
+    font-size: 5em;
+    text-align: center;
+    border-right: 0;
+    padding-right: 0px;
+    margin: auto;
+    display: block;
+  }
+  #project p {
+    width: 60%;
+    display: block;
+    margin: 20px auto 0;
+  }
+  #project br{
+    display: none;
+  }
+  body{
+    text-align: center;
+  }
+  .content-overlay h1{
+    font-size: 4em;
+  }
+  .acties-wrap, .harten-wrap, .optredens-wrap{
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 1050px){
+  .date {
+    display: none;
+  }
+  .title {
+    width: 500px;
+    left: calc(50vw - 230px);
+  }
+}
+
+@media screen and (max-width: 950px){
+  #project h1 {
+    width: 80%;
+  }
+  #project p {
+    width: 80%;
+  }
+  .concert-img {
+    width: 100%;
+  }
+  .concert-text {
+    width: 100%;
+  }
+  .concert-img::after {
+    position: absolute;
+    border: 10px solid white;
+    content: "";
+    height: 90%;
+    width: 93%;
+    top: -25px;
+    right: -25px;
+    z-index: -1;
+  }
+  .steun-right {
+    width: 100%;
+  }
+  #project h1 {
+    font-size: 3em;
+  }
+  #concert h1 {
+    font-size: 3em;
+  }
+  #steun h1 {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 690px){
+  .header-title {
+    top: 126px;
+  }
+  .title {
+    width: 340px;
+    left: calc(50vw - 160px);
+  }
+  .btn {
+    padding: 15px 37px;
+    left: calc(50vw - 169px);
+    top: 63vh;
+  }
+  .concert-img::after {
+    position: absolute;
+    border: 5px solid white;
+    content: "";
+    height: 90%;
+    width: 93%;
+    top: -13px;
+    right: -13px;
+  }
+}
+@media screen and (max-width: 450px){
+  body{
+    font-size: 0.8em;
+  }
+  .btn {
+    left: calc(50vw - 155px);
+  }
+}
